@@ -3,7 +3,7 @@ Testing the effectiveness of various classification algorithms on predicting hea
 
 ### Contributors
 + Samantha Lee
-+ Patrick Boone
++ Richard Boone
 + Patrick Wu
 + Keelan McMachon
 
