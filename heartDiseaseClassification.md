@@ -313,65 +313,7 @@ plotdata = [trace0, trace1, trace2, trace3, trace4, trace5, trace6, trace7, trac
 py.iplot(plotdata)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    PlotlyRequestError                        Traceback (most recent call last)
-
-    <ipython-input-21-2612d8ff493f> in <module>()
-         44 )
-         45 plotdata = [trace0, trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8, trace9, trace10]
-    ---> 46 py.iplot(plotdata)
-    
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/plotly/plotly.py in iplot(figure_or_data, **plot_options)
-        132     if 'auto_open' not in plot_options:
-        133         plot_options['auto_open'] = False
-    --> 134     url = plot(figure_or_data, **plot_options)
-        135 
-        136     if isinstance(figure_or_data, dict):
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/plotly/plotly.py in plot(figure_or_data, validate, **plot_options)
-        225     data = fig.get('data', [])
-        226     plot_options['layout'] = fig.get('layout', {})
-    --> 227     response = v1.clientresp(data, **plot_options)
-        228 
-        229     # Check if the url needs a secret key
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/clientresp.py in clientresp(data, **kwargs)
-         33 
-         34     url = '{plotly_domain}/clientresp'.format(**cfg)
-    ---> 35     response = request('post', url, data=payload)
-         36 
-         37     # Old functionality, just keeping it around.
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/utils.py in request(method, url, **kwargs)
-         84         content = response.content if response else 'No content'
-         85         raise exceptions.PlotlyRequestError(message, status_code, content)
-    ---> 86     validate_response(response)
-         87     return response
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/utils.py in validate_response(response)
-         36         message = content if content else 'No Content'
-         37 
-    ---> 38     raise exceptions.PlotlyRequestError(message, status_code, content)
-         39 
-         40 
-
-
-    PlotlyRequestError: Aw, snap! You tried to use our API as the user 'rboone125', but the supplied API key doesn't match our records. You can view your API key at plot.ly/settings.
-    
-    You're most likely getting this message because your local credentials file isn't synced with the Plotly server you're communicating with.
-    
-    Go to plot.ly/<language>/getting-started (e.g., plot.ly/python/getting-started) for more information.
-    
-    Make sure that you're logged in as rboone125.
-    
-    Need help? Please try searching Plotly's <a href='http://stackoverflow.com/questions/tagged/plotly'>Stack Overflow channel</a>.
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~rboone125/18.embed"></iframe>
 
 
 ## Preprocessing
@@ -513,21 +455,6 @@ for i in range(1,5):
 
 
 ```python
-f, ax = plt.subplots(figsize=(11, 15))
-
-ax.set_axis_bgcolor('#fafafa')
-plt.title("Box Plot of Transformed Data Set")
-ax.set(xlim=(-.05, 1.05))
-ax = sns.boxplot(data = heartDisease[1:29], orient = 'h', palette = 'Set2')
-plt.show()
-```
-
-
-![png](output_17_0.png)
-
-
-
-```python
 trace0 = go.Box(
     y=heartDisease['age'],
     name='age'
@@ -576,65 +503,7 @@ plotdata = [trace0, trace1, trace2, trace3, trace4, trace5, trace6, trace7, trac
 py.iplot(plotdata)
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    PlotlyRequestError                        Traceback (most recent call last)
-
-    <ipython-input-34-2612d8ff493f> in <module>()
-         44 )
-         45 plotdata = [trace0, trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8, trace9, trace10]
-    ---> 46 py.iplot(plotdata)
-    
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/plotly/plotly.py in iplot(figure_or_data, **plot_options)
-        132     if 'auto_open' not in plot_options:
-        133         plot_options['auto_open'] = False
-    --> 134     url = plot(figure_or_data, **plot_options)
-        135 
-        136     if isinstance(figure_or_data, dict):
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/plotly/plotly.py in plot(figure_or_data, validate, **plot_options)
-        225     data = fig.get('data', [])
-        226     plot_options['layout'] = fig.get('layout', {})
-    --> 227     response = v1.clientresp(data, **plot_options)
-        228 
-        229     # Check if the url needs a secret key
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/clientresp.py in clientresp(data, **kwargs)
-         33 
-         34     url = '{plotly_domain}/clientresp'.format(**cfg)
-    ---> 35     response = request('post', url, data=payload)
-         36 
-         37     # Old functionality, just keeping it around.
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/utils.py in request(method, url, **kwargs)
-         84         content = response.content if response else 'No content'
-         85         raise exceptions.PlotlyRequestError(message, status_code, content)
-    ---> 86     validate_response(response)
-         87     return response
-
-
-    /Users/samanthalee/anaconda/lib/python3.5/site-packages/plotly/api/v1/utils.py in validate_response(response)
-         36         message = content if content else 'No Content'
-         37 
-    ---> 38     raise exceptions.PlotlyRequestError(message, status_code, content)
-         39 
-         40 
-
-
-    PlotlyRequestError: Aw, snap! You tried to use our API as the user 'rboone125', but the supplied API key doesn't match our records. You can view your API key at plot.ly/settings.
-    
-    You're most likely getting this message because your local credentials file isn't synced with the Plotly server you're communicating with.
-    
-    Go to plot.ly/<language>/getting-started (e.g., plot.ly/python/getting-started) for more information.
-    
-    Make sure that you're logged in as rboone125.
-    
-    Need help? Please try searching Plotly's <a href='http://stackoverflow.com/questions/tagged/plotly'>Stack Overflow channel</a>.
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~rboone125/14.embed"></iframe>
 
 
 ## Model Estimation
@@ -828,8 +697,7 @@ plt.ylabel('Feature')
 plt.show()
 ```
 
-
-![png](output_36_0.png)
+<img src = "https://raw.githubusercontent.com/samanthaklee/Heart-Disease-Classification/master/images/output_36_0.png">
 
 
 
@@ -1075,55 +943,7 @@ plt.legend(loc="lower right")
 
 plt.show()
 ```
-
-
-![png](output_59_0.png)
-
-
-#### Second Iteration of the ROC curve using Plotly to work on Inertia7
-
-
-```python
-lw = 2
-
-trace1 = go.Scatter(x=fpr1, y=tpr1, 
-                    mode='lines', 
-                    line=dict(color='darkorange', width=lw),
-                    name='Decision Tree ROC curve (area = %0.4f)' % auc_dt
-                   )
-
-trace2 = go.Scatter(x=fpr2, y=tpr2, 
-                    mode='lines', 
-                    line=dict(color='red', width=lw),
-                    name= 'Random Forest ROC curve (area = %0.4f)' % auc_rf
-                   )
-
-trace3 = go.Scatter(x=fpr3, y=tpr3, 
-                    mode='lines', 
-                    line=dict(color='blue', width=lw),
-                    name= 'Kth Nearest Neighbor ROC curve (area = %0.2f)' % auc_knn
-                   )
-
-
-trace4 = go.Scatter(x=fpr4, y=tpr4, 
-                    mode='lines', 
-                    line=dict(color='green', width=lw),
-                    name='SVM ROC curve (area = %0.2f)' % auc_svm
-                   )
-
-layout = go.Layout(title='Receiver operating characteristic example',
-                   xaxis=dict(title='False Positive Rate'),
-                   yaxis=dict(title='True Positive Rate'))
-
-fig = go.Figure(data=[trace1, trace2, trace3, trace4], layout=layout)
-py.iplot(fig)
-```
-
-
-
-
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~rboone125/38.embed" height="525px" width="100%"></iframe>
-
+<img src ="https://raw.githubusercontent.com/samanthaklee/Heart-Disease-Classification/master/images/output_59_0.png">
 
 
 ## Conclusions
@@ -1133,7 +953,7 @@ Using random forests has produced the best performances in test error rate and h
 By messing around with data and applying different algorithms, we have so many tools at our hands that can predict the presence of disease for the future. I'm not really into biostatistics or anything like that, but this project is still super handy and I definitely learned a lot doing it. Also thanks Ravi for your breast cancer project cause it was actually a huge inspiration and helped guide this one a lot. You're probably the only person who checks out my Github so thanks!!! :) 
 
 | Model/Algorithm | Test Accuracy Rate | Area under the Curve for ROC |
-|-----------------|-----------------|--------------------------------------------|----------------|
+|-----------------|-----------------|----------------|
 | Decision Trees | 95.64% | 0.9706 | 
 | Random Forest| 96.491% | 0.9706 | 
 | Support Vector Machine| 72.81% | 0.7399 | 
