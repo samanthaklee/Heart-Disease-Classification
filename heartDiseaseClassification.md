@@ -472,11 +472,6 @@ ax = sns.boxplot(data = heartDisease[1:29], orient = 'h', palette = 'Set2')
 plt.show()
 ```
 
-
-![png](output_17_0.png)
-
-
-
 ```python
 trace0 = go.Box(
     y=heartDisease['age'],
@@ -718,7 +713,7 @@ plt.show()
 ```
 
 
-![png](output_35_0.png)
+<img src="https://raw.githubusercontent.com/samanthaklee/Heart-Disease-Classification/master/images/output_35_0.png">
 
 
 
@@ -966,53 +961,7 @@ plt.show()
 ```
 
 
-![png](output_58_0.png)
-
-
-#### Second Iteration of the ROC curve using Plotly to work on Inertia7
-
-
-```python
-lw = 2
-
-trace1 = go.Scatter(x=fpr1, y=tpr1, 
-                    mode='lines', 
-                    line=dict(color='darkorange', width=lw),
-                    name='Decision Tree ROC curve (area = %0.4f)' % auc_dt
-                   )
-
-trace2 = go.Scatter(x=fpr2, y=tpr2, 
-                    mode='lines', 
-                    line=dict(color='red', width=lw),
-                    name= 'Random Forest ROC curve (area = %0.4f)' % auc_rf
-                   )
-
-trace3 = go.Scatter(x=fpr3, y=tpr3, 
-                    mode='lines', 
-                    line=dict(color='blue', width=lw),
-                    name= 'Kth Nearest Neighbor ROC curve (area = %0.2f)' % auc_knn
-                   )
-
-
-trace4 = go.Scatter(x=fpr4, y=tpr4, 
-                    mode='lines', 
-                    line=dict(color='green', width=lw),
-                    name='SVM ROC curve (area = %0.2f)' % auc_svm
-                   )
-
-layout = go.Layout(title='Receiver operating characteristic example',
-                   xaxis=dict(title='False Positive Rate'),
-                   yaxis=dict(title='True Positive Rate'))
-
-fig = go.Figure(data=[trace1, trace2, trace3, trace4], layout=layout)
-py.iplot(fig)
-```
-
-
-
-
-<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plot.ly/~rboone125/38.embed" height="525px" width="100%"></iframe>
-
+<img src= "https://raw.githubusercontent.com/samanthaklee/Heart-Disease-Classification/master/images/output_58_0.png">
 
 
 ## Conclusions
@@ -1022,7 +971,7 @@ Using random forests has produced the best performances in test error rate and h
 By messing around with data and applying different algorithms, we have so many tools at our hands that can predict the presence of disease for the future. I'm not really into biostatistics or anything like that, but this project is still super handy and I definitely learned a lot doing it. Also thanks Ravi for your breast cancer project cause it was actually a huge inspiration and helped guide this one a lot. You're probably the only person who checks out my Github so thanks!!! :) 
 
 | Model/Algorithm | Test Accuracy Rate | Area under the Curve for ROC |
-|-----------------|-----------------|--------------------------------------------|----------------|
+|-----------------|-----------------|----------------|
 | Decision Trees | 95.64% | 0.9706 | 
 | Random Forest| 96.491% | 0.9706 | 
 | Support Vector Machine| 72.81% | 0.7399 | 
