@@ -29,7 +29,7 @@ Some libraries in python that we used were
 Using random forests has produced the best performances in test error rate and having true positives/true negatives, and I highly doubt that I will find an algorithm that performs better than that. 
 
 | Model/Algorithm | Test Accuracy Rate | Area under the Curve for ROC |
-|-----------------|-----------------|--------------------------------------------|----------------|
+|-----------------|-----------------|----------------|
 | Decision Trees | 95.64% | 0.9706 | 
 | Random Forest| 96.491% | 0.9706 | 
 | Support Vector Machine| 72.81% | 0.7399 | 
